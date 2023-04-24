@@ -1,0 +1,42 @@
+clc;
+clear;
+
+//Q1
+disp("Q1");
+Pt=15;
+Aet=0.2;
+Aer=0.5;
+
+R=15*10^3;
+
+f=5*10^9;
+c=3*10^8;
+l=c/f;
+
+Gt=(4*%pi*Aet)/l^2;
+disp("Transmitter Gain: ",Gt);
+
+Gr=(4*%pi*Aer)/l^2;
+disp("Receiver Gain: ",Gr);
+
+Pr=Pt*Gt*Gr*(l/(4*%pi*R))^2;
+disp("Receiver Power",Pr,"W");
+
+//Q2
+disp("Q2");
+Gtdb=25;
+Grdb=20;
+f=3*10^9;
+c=3*10^8;
+l=c/f;
+R=500;
+Pt=100;
+
+Gt=10^(Gtdb/10);
+disp("Transmitter Gain: ",Gt);
+
+Gr=10^(Grdb/10);
+disp("Receiver Gain: ",Gr);
+
+Pr=Pt*Gt*Gr*(l/(4*%pi*R))^2;
+disp("Receiver Power",Pr);
