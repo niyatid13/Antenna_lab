@@ -1,0 +1,38 @@
+//Broadsides
+
+//Niyati Deshmukh Rollno-11 D14B
+
+clc;
+
+clear;
+
+n=input("Enter the number of elements: ")
+
+f=1*10^9
+
+c=3*10^8
+
+pie=3.14
+
+lamada=c/f
+
+t=0:0.01:(2*pie)
+
+k=2*pie/lamada
+
+B=0 //FOR BROADSIDE
+
+d=lamada/4
+
+y=k*d*cos(t) + B
+
+direc=(2*n*d)/lamada
+
+disp("directivity",direc)
+
+E_no=(1/n)*((sin(n*y)/2))./(sin(y/2))
+
+polarplot(t,E_no)
+
+title("normalization electric field intensity vs theta")
+
