@@ -1,0 +1,26 @@
+// Pattern Multiplication
+
+clc;
+clear;
+theta=linspace(0,2*%pi,1000);
+E_single=abs(cos(theta));
+lambda=input('Wavelength w: ');
+k=(2*%pi)/lambda;
+d=lambda/4
+for x=[-1,0,1]
+    disp('Case'); 
+    disp(x);
+    AF= cos((k*d*cos(theta) + (x*%pi/2))/2);
+    Et=E_single.*AF;
+    figure(x+1)
+    gcf.background = 8;
+    subplot(1,3,1);
+    polarplot(theta,E_single);
+    title("E_single");
+    subplot(2,3,5);
+    polarplot(theta,AF);
+    title("Array Factor");
+    subplot(1,3,3);
+    polarplot(theta,Et);
+    title("E total");
+end
